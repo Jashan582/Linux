@@ -37,11 +37,33 @@ the -p makes our life easier by creating any needed parent directories for us
 
 Now we need to create two directories that will contain our server blocks and help us create a symlink
 
-8) To create the files run the below commands
+8) To create the directories run the below commands
 ''''bash
 sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
 ''''
+Now we neeed to create a file inside the site-available directory that will contain our server blocks 
+9) to create the file use 
+''''
+cd /etc/nginx/sites-available
 
-9) 
+vim nginx-2420.conf
+''''
+using vim to create the file sould automatically take you to the vim interface.
+
+10) add server blocks to the vim file you are in
+''''
+server {
+    listen 80;
+    listen [::]:80;
+    server_name domainname1.tld;
+    root /usr/share/nginx/domainname1.tld/html;
+    location / {
+        index index.php index.html index.htm;
+    }
+}
+''''
+
+
+
 
