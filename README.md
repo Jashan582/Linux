@@ -62,7 +62,44 @@ server {
         index index.php index.html index.htm;
     }
 }
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+
+    ...
+}
 ''''
+Now add the site-enabled to the end of the nginx.conf file
+
+11) go into the /etc/nginx directory
+then get into the conf file using vim
+''''
+sudo vim nginx.conf
+''''
+add this to the bottom of the file
+''''
+8 http {
+119
+120         include sites-enabled}
+''''
+
+12) Now restart your nginx
+''''
+sudo systemctl restart nginx.service
+''''
+
+13) create a html file in the project directory we made at the begining
+''''
+cd /web/html/nginx-2420
+
+touch example.html
+''''
+now copy the html code that is givin in the html file.
+
+Done
+
+
 
 
 
