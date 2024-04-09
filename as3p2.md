@@ -162,7 +162,7 @@ sudo systemctl enable hello-service.service
 ```
 then to see the status and if it is running
 ```bash
-systemctl status backend.service
+systemctl status hello-server.service
 ```
 
 
